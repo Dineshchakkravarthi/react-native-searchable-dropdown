@@ -5,7 +5,8 @@ import {
   TextInput,
   View,
   TouchableOpacity,
-  Keyboard
+  Keyboard,
+  Image
 } from 'react-native';
 
 const defaultItemValue = {
@@ -138,9 +139,15 @@ export default class SearchableDropDown extends Component {
           { 
             this.props.selectedItems && this.props.selectedItems.length > 0 && this.props.selectedItems.find(x => x.id === item.id) 
             ?
-              <Text style={{ ...this.props.itemTextStyle }}>{item.name}</Text>
+            <View>
+                <Text style={{ ...this.props.itemTextStyle }}>{item.name}</Text>
+                <Image style = {{...this.props.itemImageStyle}} source = {{uri:item.image}}/>
+            </View>
             :
+            <View>
               <Text style={{ ...this.props.itemTextStyle }}>{item.name}</Text>
+              <Image style = {{...this.props.itemImageStyle}} source = {{uri:item.image}}/>
+            </View>
           }
         </TouchableOpacity>
       );
