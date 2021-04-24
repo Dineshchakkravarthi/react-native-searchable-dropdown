@@ -139,12 +139,12 @@ export default class SearchableDropDown extends Component {
           { 
             this.props.selectedItems && this.props.selectedItems.length > 0 && this.props.selectedItems.find(x => x.id === item.id) 
             ?
-            <View>
+            <View style = {{...this.props.listItemStyle}}>
                 <Text style={{ ...this.props.itemTextStyle }}>{item.name}</Text>
                 <Image style = {{...this.props.itemImageStyle}} source = {{uri:item.image}}/>
             </View>
             :
-            <View>
+            <View style = {{...this.props.listItemStyle}}>
               <Text style={{ ...this.props.itemTextStyle }}>{item.name}</Text>
               <Image style = {{...this.props.itemImageStyle}} source = {{uri:item.image}}/>
             </View>
